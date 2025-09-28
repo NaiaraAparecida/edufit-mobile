@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "EduFit",
+    "slug": "edufit",
+    "scheme": "edufit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/LogoSemFundo.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/LogoEduFit.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A4C86"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/LogoSemFundo.png",
+        "backgroundColor": "#0A4C86"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/LogoSemFundo.png"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "plugins": [
+      [
+        "expo-video",
+        {
+          "supportsBackgroundPlayback": true,
+          "supportsPictureInPicture": true
+        }
+      ],
+      "expo-audio",
+      "expo-font"
+    ]
+  }
+}
