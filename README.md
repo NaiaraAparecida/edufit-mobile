@@ -1,133 +1,141 @@
-```md
-# EduFit (Mobile)
-Aplicativo **mobile** do EduFit com **React Native (Expo)**.  
-Consome as APIs do projeto web e entrega **Login**, **Vídeos**, **Desafios**, **Chat**, **IA (mock)** e **Perfil**.
+# 🏋️‍♀️ EduFit Mobile
 
-## ✨ Destaques
-- Expo (React Native)
-- Navegação com `@react-navigation/*`
-- Axios com baseURL configurável por ambiente
-- Tema unificado (azul/laranja EduFit)
-- Login mock salvando `token` e `user` no `AsyncStorage`
-- Pronto para **EAS Build** (APK de testes)
+**EduFit Mobile** é o aplicativo do ecossistema **EduFit — Educação e Movimento**, criado para incentivar a prática esportiva e promover o bem-estar físico de forma **divertida, educativa e interativa**.  
+O app combina **tecnologia, gamificação e acessibilidade** para transformar a experiência da Educação Física.
 
-## 🔧 Stack
-- **RN/Expo**: expo, react-native, @expo/vector-icons
-- **Navegação**: @react-navigation/native, stack, bottom-tabs
-- **HTTP**: axios
-- **Storage**: @react-native-async-storage/async-storage
+---
 
-## 📁 Estrutura
+## ☁️ Deploy
+- **Expo Go:** Ficará disponível para Android e iOS  
+- **Repositório Web:** https://github.com/NaiaraAparecida/edufit-web
 
- screens/
-LoginScreen.js
-RegisterScreen.js
-HomeScreen.js
-VideoTutorialScreen.js
-ChallengesScreen.js
-ChatScreen.js
-AIResponseScreen.js
-ProfileScreen.js
+---
 
-navigation/
-MainTabs.js
+## ✨ Recursos
+- **Login e Cadastro** com armazenamento local (AsyncStorage)  
+- **Agenda de Atividades** para registrar e consultar práticas esportivas  
+- **Desafios Gamificados** com contagem de participantes e conquistas  
+- **Relatórios de Desempenho** com emojis e avaliações visuais  
+- **Vídeos Tutoriais** integrados (via Expo AV)  
+- **Chat Interativo** entre usuários  
+- **Assistente de IA Educacional** (simulado)  
+- **Perfil do Usuário** com nome, e-mail e avatar  
+- Interface **intuitiva e acessível** para alunos  
 
-services/
-api.js # axios baseURL por ambiente
+---
 
-components/
-HeaderLogo.js
-AvatarHeader.js
+## 🛠 Tecnologias
+- **React Native** + **Expo**
+- **React Navigation** (Stack + Bottom Tabs)
+- **AsyncStorage**
+- **Expo AV** (vídeos)
+- **Material Icons**
+- **Estilos customizados com design educacional**
 
-theme.js
-App.js
-index.js
+---
 
+## 📂 Estrutura do Projeto
 
-## ▶️ Rodando localmente
+edufit-mobile/
+├── App.js
+├── app.json
+├── package.json
+├── assets/
+│ └── (ícones, splash, favicons)
+├── navigation/
+│ └── MainTabs.js
+└── screens/
+├── ActivityScheduleScreen.js
+├── AIResponseScreen.js
+├── ChallengesScreen.js
+├── ChatScreen.js
+├── HomeScreen.js
+├── LoginScreen.js
+├── ProfileScreen.js
+├── RegisterScreen.js
+├── ReportScreen.js
+└── VideoTutorialScreen.js
+
+---
+
+## 🚀 Como Rodar Localmente
+
 ```bash
-# 1) instalar dependências
+# Clone o repositório
+git clone https://github.com/NaiaraAparecida/edufit-mobile.git
+
+# Acesse a pasta
+cd edufit-mobile
+
+# Instale as dependências
 npm install
 
-# 2) ajustar baseURL do axios conforme o ambiente (services/api.js)
-#   Android emulador: http://10.0.2.2:3000
-#   iOS simulator:    http://localhost:3000
-#   Celular físico:   http://SEU_IP_DA_MAQUINA:3000
+# Inicie o app
+npx expo start
+```
 
-# 3) iniciar
-npx expo start -c
+📱 Escaneie o QR Code no terminal com o app Expo Go (Android/iOS)
+ou pressione “a” para abrir no emulador Android.
 
-# 4) abrir no Expo Go (QR) ou emulador
+---
+## 🧩 Integração com EduFit Web
 
-services/api.js (exemplo)
-import axios from "axios";
-import { Platform } from "react-native";
+| Projeto | Repositório | Descrição |
+|-----------|--------|--------|
+| 🌐 EduFit Web | [edufit-web](https://github.com/NaiaraAparecida/edufit-web) | Plataforma web complementar (Next.js) |
+| 📱 EduFit Mobile | [edufit-mobile](https://github.com/NaiaraAparecida/edufit-mobile)| Aplicativo mobile principal (React Native + Expo) |
 
-const baseURL =
-  Platform.OS === "android" ? "http://10.0.2.2:3000" : "http://localhost:3000";
+ ---
+ 
+## 🧱 Roadmap
 
-export const api = axios.create({ baseURL, timeout: 12000 });
+- [x] Estrutura inicial com navegação e telas  
+- [x] Autenticação local (AsyncStorage)  
+- [ ] Desafios e relatórios de desempenho  
+- [ ] Vídeos educativos  
+- [ ] Integração com backend (Firebase / API Web)  
+- [ ] Sistema de conquistas e níveis  
+- [ ] Deploy final no Expo / Play Store
 
-🔐 Fluxo de login (mock)
+---
 
-POST /api/login → { token, user }
+## 🎨 Design e UX
 
-LoginScreen salva token/user no AsyncStorage e faz reset para MainTabs.
+- Interface simples, lúdica e educativa
 
-📲 Telas
+- Foco em acessibilidade e navegação intuitiva
 
-Login / Registro: validação básica, “Esqueci a senha” (mock)
+- Cores baseadas em movimento e energia
 
-Vídeos: lista com player
+- Ícones e componentes padronizados
 
-Desafios: GET/POST /api/challenges
+- Tipografia clara e responsiva
 
-Chat: GET/POST /api/messages + polling a cada 4s
+---
 
-IA (mock): POST /api/ai/assist → mostra resposta
+## 🤝 Contribuindo
 
-Perfil: GET/PUT /api/me + avatar (URL)
+Contribuições são bem-vindas!
+Abra uma issue ou envie um pull request com suas melhorias.
 
-🔁 Dicas de Ambiente
+---
 
-Garanta o edufit-web rodando (npm run dev) antes de testar o mobile
+## 📬 Contato
 
-Teste rápido de conexão no emulador:
+LinkedIn: www.linkedin.com/in/naiara-cruz
 
-Android: abra o navegador do emulador em http://10.0.2.2:3000/api/videos
+Email: naiaraaparecida95@gmail.com
 
-iOS: http://localhost:3000/api/videos
+Portfólio: https://portfolio-site-naiara.netlify.app/
 
-Celular físico: http://SEU_IP:3000/api/videos
+---
 
-🧪 Problemas comuns
+## 🧠 Autoria
 
-Carregando infinito no login → baseURL errada (use 10.0.2.2 no Android emulador), servidor web parado, firewall
+Desenvolvido por:
 
-Preso no Splash → index.js faltando registerRootComponent(App) ou fontes/recursos não carregam
+👩‍💻 Naiara Aparecida da Silva Cruz
 
-Erro de ícones/navegação → instale:
+💼 Desenvolvedora Front-End & UX/UI Designer
 
-npx expo install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context @expo/vector-icons
-
-📦 Build (EAS)
-npm i -g eas-cli
-eas login
-# perfil preview para APK
-echo '{
-  "cli": { "version": ">= 3.18.0" },
-  "build": { "preview": { "android": { "buildType": "apk" }, "ios": { "simulator": true } } }
-}' > eas.json
-
-eas build -p android --profile preview
-# receberá um link para download do APK
-
-🧭 Roadmap
-
- Apontar baseURL para deploy do web (Vercel)
-
- Auth real (Supabase Auth)
-
- Upload de avatar (Storage) com picker
-
- Push notifications (Expo Notifications)
+🏫 FIAP — Global Solution 2025
