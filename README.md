@@ -37,23 +37,41 @@ O app combina **tecnologia, gamificação e acessibilidade** para transformar a 
 ## 📂 Estrutura do Projeto
 
 edufit-mobile/
+
 ├── App.js
+
 ├── app.json
+
 ├── package.json
+
 ├── assets/
+
 │ └── (ícones, splash, favicons)
+
 ├── navigation/
+
 │ └── MainTabs.js
+
 └── screens/
+
 ├── ActivityScheduleScreen.js
+
 ├── AIResponseScreen.js
+
 ├── ChallengesScreen.js
+
 ├── ChatScreen.js
+
 ├── HomeScreen.js
+
 ├── LoginScreen.js
+
 ├── ProfileScreen.js
+
 ├── RegisterScreen.js
+
 ├── ReportScreen.js
+
 └── VideoTutorialScreen.js
 
 ---
